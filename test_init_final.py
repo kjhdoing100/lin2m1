@@ -1721,6 +1721,7 @@ while True:
 				ouput_bossData = []
 				aa = []
 				fixed_datelist = []
+				nm =[]
 				
 				for i in range(bossNum):
 					if bossMungFlag[i] == True :
@@ -1729,30 +1730,33 @@ while True:
 						datelist2.append(bossTime[i])
 
 				datelist = list(set(datelist2))
+
 				for i in range(bossNum):
 					if bossTimeString[i] == '99:99:99' and bossMungFlag[i] != True :
 						temp_bossTime1.append(bossData[i][0])
 					else :
 						aa.append(bossData[i][0])		                     #output_bossData[0] : 보스명
+						nm = bossData[i][0]
 						if bossMungFlag[i] == True :
 							aa.append(tmp_bossTime[i])                       #output_bossData[1] : 시간
 							aa.append(tmp_bossTime[i].strftime('%H:%M:%S'))  #output_bossData[2] : 시간(00:00:00)
-							if bossData[i][0] == '셀루' or bossData[i][0] == '티미니엘' :
-								aa.append('-')	                           
-							else : 
+							if nm == '셀루' :
+								aa.append('-')	                                 #output_bossData[3] : -
+							else :
 								aa.append('+')
 						else :
 							aa.append(bossTime[i])                           #output_bossData[1] : 시간
 							aa.append(bossTime[i].strftime('%H:%M:%S'))      #output_bossData[2] : 시간(00:00:00)
-							if bossData[i][0] == '셀루' or bossData[i][0] == '티미니엘' :
-								aa.append('-')	                           
-							else : 
+							if nm == '셀루' :
+								aa.append('-')	                                 #output_bossData[3] : -
+							else :
 								aa.append('+')
 						aa.append(bossData[i][2])                            #output_bossData[4] : 멍/미입력 보스
 						aa.append(bossMungCnt[i])	                         #output_bossData[5] : 멍/미입력횟수
 						aa.append(bossData[i][6])	                         #output_bossData[6] : 메세지
 						ouput_bossData.append(aa)
 						aa = []
+						nm = []
 
 				fixed_information = ''								
 				for i in range(fixed_bossNum):
