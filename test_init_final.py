@@ -1740,14 +1740,14 @@ while True:
 						if bossMungFlag[i] == True :
 							aa.append(tmp_bossTime[i])                       #output_bossData[1] : 시간
 							aa.append(tmp_bossTime[i].strftime('%H:%M:%S'))  #output_bossData[2] : 시간(00:00:00)
-							if nm == '셀루' :
+							if nm == '여왕개미' or '코어수스캡터' or '가레스' or '카탄' or '셀루' or '베히모스' or '메두사' or '티미트리스' or '스탄' or '템페스트' or '바실라' or '켈소스'  :
 								aa.append('-')	                                 #output_bossData[3] : -
 							else :
 								aa.append('+')
 						else :
 							aa.append(bossTime[i])                           #output_bossData[1] : 시간
 							aa.append(bossTime[i].strftime('%H:%M:%S'))      #output_bossData[2] : 시간(00:00:00)
-							if nm == '셀루' :
+							if nm == '여왕개미' or '코어수스캡터' or '가레스' or '카탄' or '셀루' or '베히모스' or '메두사' or '티미트리스' or '스탄' or '템페스트' or '바실라' or '켈소스'  :
 								aa.append('-')	                                 #output_bossData[3] : -
 							else :
 								aa.append('+')
